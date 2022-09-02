@@ -1,0 +1,395 @@
+body{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: table-cell;
+}
+header{
+    width: 100%;
+    background: #e7e7e7;
+}
+.container {
+    display: flex;
+    float: right;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
+}
+#btn-menu{
+    display: none;
+}
+header label{
+    display: none;
+    width: 30px;  
+    height: 30px;
+    padding: 10px;
+    border-right: 1px solid rgb(14, 14, 14);
+    
+}
+
+header label:hover { /*hover: para que al pasar el mouse se marque*/
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+}
+
+.menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 1;
+    display: flex; /* filas horizontal*/
+   /* justify-content: flex-end;* para que se vaya a la derecha*/
+   /*justify-content: center;*/
+   flex-direction: row;/*lo pone en vertical*/
+
+}
+.menu li {
+ text-align: center;
+ flex-grow: 0; /*para que ocupe todo el ancho */
+ 
+}
+.menu li:hover{
+ cursor: pointer;
+ background: rgba(8, 8, 8, 0.3);
+
+}
+.menu li ul {
+ display: none;
+ position: absolute;
+ min-width: 120px;
+ background: #e7e7e7;
+}
+
+.menu li:hover > ul {
+    display: block;
+}
+main{
+padding: 20px;
+}
+.menu li a {
+ display: block;
+ padding: 10px 15px;
+ color: rgb(12, 12, 12);
+ text-decoration:none;
+}
+.menu ul li ul li{
+    width: 180px;
+    position: relative;
+}
+.menu ul li ul li ul {
+    position: absolute;
+    top: 0;
+    left: 180px;
+}
+.título {
+    display: flex;
+    justify-content: center;
+    color: rgb(16, 16, 100);
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin-left: 200PX;
+}
+@media(max-width: 768px){
+header label{
+display: block;
+ }
+ .menu {
+  position: absolute;
+  background: #e7e7e7;
+  width: 60%;
+  margin-left: -60%; /*como es negativo se sale del pantalla*/
+  transition: all 0.5s;
+
+ }
+ .menu ul{
+flex-direction: column;
+ }
+ .menu li {
+  border-top: 1px   solid black;
+ }
+ .menu li ul {
+  position: absolute;
+  top: 20%;
+  left: 400px;
+  width: 400px;
+ }
+ #btn-menu:checked ~ .menu{
+  margin:0;
+
+ }
+}
+.button{
+    position: relative;
+    margin-bottom: 0px;
+}
+.banner{
+    display: table-cell;
+	width: 100%;
+	height: 600px;
+	animation: banner 15s infinite linear alternate;
+	background-size: 100% 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@keyframes banner{
+	0%, 20%{
+		background-image: url("https://www.unionderadios.com.ar/wp-content/uploads/2020/04/centro-de-salud.jpg");
+	}
+	25%, 45%{
+		background-image: url("https://www.metrovias.com.ar/wp-content/uploads/2019/04/urquiza_4.jpg");
+	}
+	50%, 70%{
+		background-image: url("https://www.radiorafaela.com.ar/wp-content/uploads/2019/12/medicamentos_precios_farmacia.jpg");
+	}
+	75%, 100%{
+		background-image: url("https://cdni.russiatoday.com/actualidad/public_images/2022.02/article/62155b5b59bf5b092a65a266.jpg");
+	}
+}
+.capa{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+}
+.info{
+	z-index: 1;
+	width: 100%;
+	max-width: 550px;
+	text-align: center;
+}
+.info h1{
+	color: #fff;
+	font-size: 45px;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.info p{
+	color: #c7c7c7;
+	line-height: 1.7;
+	margin-bottom: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.info a{
+	color: #fff;
+	text-decoration: none;
+	background: #3ab402;
+	padding: 16px 37px;
+	border-radius: 50px;
+    cursor: pointer;
+}
+table{
+    display: table-cell;
+    position: center;
+}
+
+.cajam{
+    display: table-cell;
+    
+    position: relative;
+}
+.caja{
+    position:relative;
+    display: table-cell;
+    background: rgb(10, 10, 83);
+    box-sizing: content-box;
+    text-align: left;
+    color: aliceblue;
+    height: 450px;
+    padding-right:100px ;
+    padding-left:100px ;
+    margin-right: 100px;
+    
+   font-size: x-large;
+   Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+.caja h2{
+    padding-top: 30px;
+    font-size: 40px;
+}
+.caja p{
+    padding-top: 40px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.post-list{
+    display: flex;
+    min-height: 20vh;
+    
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+.cont{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    grid-gap:20px;
+    
+    margin: center; 
+    padding: 20px;
+}
+.post{
+    width: 800;
+    height: 420px;
+}
+.post-img-1{
+    background: url(https://img.freepik.com/fotos-premium/grupo-empresarios-lider-empresario-primer-plano_252847-3938.jpg?w=2000);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+.post-img-2{
+    background: url(https://static.wixstatic.com/media/56a4d8_1bfb4e5234a8438b8bb94aa0c8ded820~mv2.jpg/v1/fill/w_640,h_236,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/56a4d8_1bfb4e5234a8438b8bb94aa0c8ded820~mv2.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}.post-img-3{
+    background: url(https://pbs.twimg.com/media/EkNpt1EVoAQRlzw.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+.post{
+    box-shadow: 0 1px 6px 1px black;
+    transition: .2s;
+}
+.post:hover{
+    transform: translateY(-4px);
+ box-shadow: 0 1px 14px 2px black;
+}
+.post-header{
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+.post-hover .post-img-1,
+.post-hover .post-img-2,
+.post-hover .post-img-3{
+    transform:scale(1.1);
+}
+.post-body{
+    padding: 10px;
+}
+h3 {
+font-style: italic;
+font-family: sans-serif;
+font-size: larger;
+}
+p {
+    font-size: medium;
+    font-family: sans-serif;
+}
+.cont a{
+	color: #fff;
+	text-decoration: none;
+	background: #3ab402;
+	padding: 10px 10px;
+	border-radius: 50px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+#btn-mas{
+    display: none;
+}
+.i{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.redes a, .btn-mas label{
+    display: block;
+    text-decoration: none;
+    background: #cc2b2b;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+}
+.redes a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+.redes a{
+    margin-bottom: -15px;
+    
+    opacity: 0;
+    visibility: hidden;
+}
+.redes img{
+    padding-top: 5px;
+}
+#btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+.btn-mas label{
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+}
+#btn-mas:checked ~ .btn-mas label{
+    transform: rotate(135deg);
+    font-size: 25px;
+}
+.fa fa-boton{
+    padding: 0px;
+    margin: auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.cform{
+    margin-left: 0px;
+    width: 100%;
+   padding: 20px;
+    margin: auto;
+    color: white;
+   background:rgb(0, 18, 60) ;
+    grid-gap: 50px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.cform h2{
+    margin-bottom: 15px;
+    font-size: 35px
+    
+}
+.cform p{
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.cform a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+.cform a i{
+    color: orange;
+    margin-right: 10px;
+}
